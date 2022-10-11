@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
-import { useMutation, useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+// import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
+import { useQuery } from "react-query";
+// import { useNavigate } from "react-router-dom";
 import { API } from "../../config/api";
 import TopNavbar from "../Utility/TopNavbar";
 import { UserContext } from "../../context/context";
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 function MyFilms() {
   const title = "My Films";
   document.title = "CinemaOnline | " + title;
-  const [state, dispatch] = useContext(UserContext);
+  const [state] = useContext(UserContext);
   const id = state?.user.id;
   let { data: user } = useQuery("user", async () => {
     const response = await API.get("/user/" + id);
@@ -48,7 +48,7 @@ function MyFilms() {
                     className="card_item"
                   >
                     <img
-                      src={`http://localhost:5000/uploads/${item.film?.thumbnailfilm}`}
+                      src={`${item.film?.thumbnailfilm}`}
                       // src={item.film.thumbnailfilm}
                       className="card-img"
                       style={{ height: "250px" }}

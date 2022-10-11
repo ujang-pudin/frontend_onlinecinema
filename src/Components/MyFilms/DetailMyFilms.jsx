@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { API } from "../../config/api";
-import { useContext } from "react";
-import { UserContext } from "../../context/context";
+// import { useContext } from "react";
+// import { UserContext } from "../../context/context";
 // import { Button } from "react-bootstrap";
 // import ModalPayment from "../ModalPayment";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import TopNavbar from "../Utility/TopNavbar";
 function DetailMyFilms() {
   const title = "Detail My Film";
   document.title = "CinemaOnline | " + title;
-  const [state, dispatch] = useContext(UserContext);
+  // const [state, dispatch] = useContext(UserContext);
   const [modalShow, setModalShow] = React.useState(false);
   const [modalShowPayment, setModalShowPayment] = useState(false);
 
@@ -20,16 +20,7 @@ function DetailMyFilms() {
     setModalShow(true);
   }
 
-  const handleBackMovies = () => {
-    Navigate("/addlistpage");
-  };
-
-  function paymentHandler(e) {
-    e.preventDefault();
-    // Navigate("/payment");
-  }
-
-  let Navigate = useNavigate();
+  // let Navigate = useNavigate();
   let { id } = useParams();
   let { data: films } = useQuery("filmCache", async () => {
     const response = await API.get("/film/" + id);
