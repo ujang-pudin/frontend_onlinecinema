@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import profilpict from "../../Images/default.png";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Profil() {
   const title = "Profile";
@@ -24,10 +25,36 @@ export default function Profil() {
   });
   // console.log(user?.transaction.status);
 
+  // function handleUpdate(e) {
+  //   e.preventDefault(alert("Please Login"));
+  //   Navigate("/updateuser");
+  // }
+
   return (
     <div style={{ background: "black" }}>
       <TopNavbar />
       {/* <div className="container" style={{ width: "100vh" }}> */}
+
+      {/* <div
+        style={{ display: "flex", justifyContent: "end", paddingRight: "5rem" }}
+      >
+        <button
+          // onClick={handleUpdate}
+          style={{
+            padding: ".7rem",
+            borderRadius: "10px",
+            background: "rgba(205, 46, 113, 1)",
+            fontWeight: "bold",
+          }}
+        >
+          <Link
+            to={"/updateuser"}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Edit Profil
+          </Link>
+        </button>
+      </div> */}
       <div
         style={{
           alignItems: "center",

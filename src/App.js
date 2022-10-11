@@ -18,6 +18,7 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "./context/context";
 import MyFilms from "./Components/MyFilms/MyFilms";
 import DetailMyFilm from "./Components/MyFilms/DetailMyFilms";
+import UpdateUserForm from "./Components/UpdateUser/Updateuserform";
 
 function App() {
   if (localStorage.token) {
@@ -88,6 +89,7 @@ function App() {
         <Route path="/addmovies" element={<AdminAddMovies />} />
         <Route path="/addlistpage" element={<AddListPage />} />
         <Route path="/admintvdetails/:id" element={<AdminTVDetails />} />
+        <Route path="/updateuser" element={<UpdateUserForm />} />
       </Routes>
     </>
   );

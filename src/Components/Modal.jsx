@@ -28,12 +28,10 @@ const ModalRegister = ({
     fullname: "",
     email: "",
     password: "",
-    gender: "",
     phone: "",
-    address: "",
   });
 
-  const { fullname, email, password, gender, phone, address } = form;
+  const { fullname, email, password, phone } = form;
 
   const handleChange = (e) => {
     setForm({
