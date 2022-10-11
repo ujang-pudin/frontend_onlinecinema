@@ -132,7 +132,7 @@ const AdminAddMovies = () => {
                 <Form.Control
                   placeholder="Attach Thumbnail"
                   className="admin-add-movie-thumb-file"
-                  name="image"
+                  name="thumbnailfilm"
                   type="file"
                   onChange={handleChange}
                   required
