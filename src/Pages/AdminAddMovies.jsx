@@ -73,11 +73,7 @@ const AdminAddMovies = () => {
       // Store data with FormData as object
       const formData = new FormData();
       formData.set("title", form.title);
-      formData.set(
-        "thumbnailfilm",
-        form.thumbnailfilm[0],
-        form.thumbnailfilm[0].name
-      );
+      formData.set("thumbnailfilm", form.image[0], form.image[0].name);
       console.log(form.thumbnailfilm);
       formData.set("price", form.price);
       formData.set("linkfilmbuyed", form.linkfilmbuyed);
@@ -136,7 +132,7 @@ const AdminAddMovies = () => {
                 <Form.Control
                   placeholder="Attach Thumbnail"
                   className="admin-add-movie-thumb-file"
-                  name="thumbnailfilm"
+                  name="image"
                   type="file"
                   onChange={handleChange}
                   required
