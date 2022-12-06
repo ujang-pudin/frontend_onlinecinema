@@ -151,7 +151,7 @@ function HomeScreen() {
               <div className="col-md-2 mb-5">
                 <div className="card h-100">
                   <Link
-                    to={"/movies/" + item.id}
+                    to={"/vehicles/" + item.id}
                     key={id}
                     className="card_item"
                   >
